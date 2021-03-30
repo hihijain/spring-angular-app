@@ -20,11 +20,11 @@ public class BackendApplication {
 	@GetMapping("/getallbooks")
 	public List<Books> getBooks()
 	{
-		return Stream.of(new Books(212,"Go","Kamal S.",565),
-				new Books(2121,"Java","Himanshu J",674),
-				new Books(2132,"Python","Monu Kumar",600),
-				new Books(5122,".Net","Theia",900),
-				new Books(9152,"Angular","Monty",100)).collect(Collectors.toList());
+		return Stream.of(new Books(212,"Go","Kamal S.",565,0),
+				new Books(2121,"Java","Himanshu J",674,1),
+				new Books(2132,"Python","Monu Kumar",600,1),
+				new Books(5122,".Net","Theia",900,0),
+				new Books(9152,"Angular","Monty",100,10)).collect(Collectors.toList());
 	}
 
 	@GetMapping("/hello")
