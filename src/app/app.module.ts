@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './components/book/book.component';
+import { DiscountPipe } from './pipes/discount.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent
+    BookComponent,
+    DiscountPipe
   ],
   imports: [
     BrowserModule,

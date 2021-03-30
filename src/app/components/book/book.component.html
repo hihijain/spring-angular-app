@@ -27,8 +27,9 @@
           <th>Book Id</th>
           <th>Book Name</th>
           <th>Book Author</th>
-          <th>Book Price</th>
           <th>Book Availabe</th>
+          <th>Book Price</th>
+          <th>Final Price (5% discount)</th>
         </tr>
       </thead>
       <tbody *ngFor="let book of books">
@@ -36,7 +37,6 @@
           <td>{{book.bookId}}</td>
           <td>{{book.bookName | uppercase}}</td> <!-- Using pipe in angular-->
           <td>{{book.bookAuthor}}</td>
-          <td>{{book.bookPrice | currency:"INR"}}</td> <!-- Using pipe in angular-->
           <td>
             <div [ngSwitch]="book.isAvailable">
               <span *ngSwitchCase="0">Not Available</span>
@@ -44,6 +44,8 @@
               <span *ngSwitchDefault>NA</span>
             </div>
           </td>
+          <td>{{book.bookPrice | currency:"INR"}}</td> <!-- Using pipe in angular-->
+          <td>{{book.bookPrice | discount}}</td>
         </tr>
       </tbody>
     </table>
