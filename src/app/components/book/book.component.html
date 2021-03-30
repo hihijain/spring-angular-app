@@ -20,7 +20,11 @@
     <p>{{books | json}}</p>
   </div>
   <div>
-    <h3>Table Format</h3> 
+    <div style="text-align: center">
+      <h3>Table Format</h3> 
+      Book Name <input type="text" [(ngModel)]="searchBook">
+    </div>
+    
     <table class="table table-bordered">
       <thead>
         <tr *ngIf="books.length > 0">
@@ -32,7 +36,7 @@
           <th>Final Price (5% discount)</th>
         </tr>
       </thead>
-      <tbody *ngFor="let book of books">
+      <tbody *ngFor="let book of books | filter:searchBook">
         <tr>
           <td>{{book.bookId}}</td>
           <td>{{book.bookName | uppercase}}</td> <!-- Using pipe in angular-->

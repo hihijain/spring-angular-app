@@ -10,6 +10,7 @@ export class BookComponent implements OnInit {
 
   titleMsg = "booK Records";
   books : any;
+  searchBook : string="";
 
   constructor(private restService : RestService) { }
 
