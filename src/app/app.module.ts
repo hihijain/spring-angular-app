@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { BookComponent } from './components/book/book.component';
 import { DiscountPipe } from './pipes/discount.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FinalpricePipe } from './pipes/finalprice.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
     DiscountPipe,
-    FilterPipe
+    FilterPipe,
+    FinalpricePipe
   ],
   imports: [
     BrowserModule,

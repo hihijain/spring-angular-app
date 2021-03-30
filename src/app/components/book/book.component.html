@@ -31,9 +31,11 @@
           <th>Book Id</th>
           <th>Book Name</th>
           <th>Book Author</th>
-          <th>Book Availabe</th>
+          <th>Book Available</th>
+          <th>Books Quantity</th>
           <th>Book Price</th>
-          <th>Final Price (5% discount)</th>
+          <th>Total Price</th>
+          <th>Discount(5%)</th>
         </tr>
       </thead>
       <tbody *ngFor="let book of books | filter:searchBook">
@@ -48,7 +50,9 @@
               <span *ngSwitchDefault>NA</span>
             </div>
           </td>
+          <td>{{book.quantity}}</td>
           <td>{{book.bookPrice | currency:"INR"}}</td> <!-- Using pipe in angular-->
+          <td>{{book.bookPrice | finalprice:book.quantity:book.bookPrice}}</td>
           <td>{{book.bookPrice | discount}}</td>
         </tr>
       </tbody>
