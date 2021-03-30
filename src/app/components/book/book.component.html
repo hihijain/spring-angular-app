@@ -12,33 +12,43 @@
 <body>
 
 <div class="container">
-  <h2>Book Records</h2>
-  <table class="table table-bordered">
-    <thead>
-      <tr *ngIf="books.length > 0">
-        <th>Book Id</th>
-        <th>Book Name</th>
-        <th>Book Author</th>
-        <th>Book Price</th>
-        <th>Book Availabe</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let book of books">
-      <tr>
-        <td>{{book.bookId}}</td>
-        <td>{{book.bookName}}</td>
-        <td>{{book.bookAuthor}}</td>
-        <td>{{book.bookPrice}}</td>
-        <td>
-          <div [ngSwitch]="book.isAvailable">
-            <span *ngSwitchCase="0">Not Available</span>
-            <span *ngSwitchCase="1">Available</span>
-            <span *ngSwitchDefault>NA</span>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div align="center"> 
+    <h2 >{{titleMsg | titlecase}}</h2> <!-- Using pipe in angular-->
+  </div>
+  <div class="alert alert-success"> <!-- https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp-->
+    <h3>JSON Format</h3> 
+    <p>{{books | json}}</p>
+  </div>
+  <div>
+    <h3>Table Format</h3> 
+    <table class="table table-bordered">
+      <thead>
+        <tr *ngIf="books.length > 0">
+          <th>Book Id</th>
+          <th>Book Name</th>
+          <th>Book Author</th>
+          <th>Book Price</th>
+          <th>Book Availabe</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let book of books">
+        <tr>
+          <td>{{book.bookId}}</td>
+          <td>{{book.bookName | uppercase}}</td> <!-- Using pipe in angular-->
+          <td>{{book.bookAuthor}}</td>
+          <td>{{book.bookPrice | currency:"INR"}}</td> <!-- Using pipe in angular-->
+          <td>
+            <div [ngSwitch]="book.isAvailable">
+              <span *ngSwitchCase="0">Not Available</span>
+              <span *ngSwitchCase="1">Available</span>
+              <span *ngSwitchDefault>NA</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
 </div>
 </body>
 </html>

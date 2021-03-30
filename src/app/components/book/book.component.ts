@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookComponent implements OnInit {
 
+  titleMsg = "booK Records";
   books : any;
 
   constructor(private restService : RestService) { }
